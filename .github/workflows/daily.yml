@@ -17,5 +17,5 @@ jobs:
           python-version: "3.10"
           cache: 'pip'
       - run: pip install requests
-      - run: python3 ./scripts/daily_managing.py
+      - run: python3 ./scripts/daily_managing.py ${{ secrets.WWAN13_GH_TOKEN }}
     

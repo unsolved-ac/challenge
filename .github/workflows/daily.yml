@@ -3,7 +3,7 @@ name: daily
 on:
   schedule:
     # GMt 15 (한국시간 24시)
-    - cron: '0 0 15 1/1 * ? *'
+    - cron: '0 15 * * 0-6'
 
 jobs:
   daily:

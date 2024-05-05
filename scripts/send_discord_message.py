@@ -24,6 +24,8 @@ def create_content(issue_number, date, author):
 
 
 def send_discord_message():
+    print(issue_number)
+    print(issue_title)
     date = issue_title.split()[1]
     author = issue_title.split()[3]
 

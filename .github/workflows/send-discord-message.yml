@@ -1,0 +1,20 @@
+name: build and push to docker hub
+
+on:
+  issues:
+    types: [ opened ]
+    
+jobs:
+  send-discord-message:
+    if: ${{ startsWith(github.event.issue.title, '[solve]') }}
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+      - name: setup pyhton3
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.10"
+          cache: 'pip'
+      - run: pip install discord_webhook
+      - run: python3 ./scripts/send_discord_message.py ${{ github.event.issue.number }} ${{ github.event.issue.title }} ${{ secrets.DISCORD_WEBHOOK_URL }}

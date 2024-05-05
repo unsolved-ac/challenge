@@ -6,7 +6,7 @@ on:
     
 jobs:
   send-discord-message:
-    if: ${{ startsWith(github.event.issue.title, '[solve]') }}
+    # if: ${{ startsWith(github.event.issue.title, '[solve]') }}
     runs-on: ubuntu-latest
 
     steps:

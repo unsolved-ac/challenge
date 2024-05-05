@@ -1,9 +1,9 @@
-name: cron
+name: daily
 
 on:
   schedule:
-    # 매일 10시 (한국시간 24시)
-    - cron: '0 10 * * 0-6'
+    # GMt 15 (한국시간 24시)
+    - cron: '0 0 15 1/1 * ? *'
 
 jobs:
   daily:
